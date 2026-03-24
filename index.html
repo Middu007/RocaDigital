@@ -172,6 +172,35 @@
       background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
       color: var(--white);
     }
+<!-- SEZIONE FORM CONTATTO -->
+<section class="form-section" id="contatto">
+  <h2>Parliamo del tuo progetto</h2>
+  <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore per una consulenza gratuita e senza impegno.</p>
+  
+  <!-- MODIFICA QUI: https://formspree.io/f/mkoqdaal -->
+  <form action="https://formspree.io/f/IL_TUO_ID_QUI" method="POST">
+    
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="text" name="cognome" placeholder="Cognome" required>
+    <input type="tel" name="telefono" placeholder="Telefono" required>
+    <input type="text" name="azienda" placeholder="Azienda (opzionale)">
+    
+    <!-- L'email deve avere name="email" per essere riconosciuta da Formspree come mittente -->
+    <input type="email" name="email" placeholder="La tua Email" required class="full">
+    
+    <textarea name="messaggio" placeholder="Raccontaci il tuo progetto: hai un negozio o un sito web?" class="full" required></textarea>
+    
+    abel class="privacy-label full">
+      <input type="checkbox" name="_optin" required> 
+      Ho letto e accetto la <a href="#" style="color: var(--orange-light)">Privacy Policy</a> ai sensi del GDPR (Reg. UE 2016/679) e acconsento al trattamento dei miei dati personali.
+    </label>
+    
+    <!-- Pagina di ringraziamento personalizzata (opzionale) -->
+    <input type="hidden" name="_subject" value="Nuovo contatto da Roca Digital Services!">
+    
+    <button type="submit" class="btn-submit">Invia richiesta</button>
+  </form>
+</section>
     .form-section h2 { color: var(--white); }
     .form-section .section-sub { color: #bbb; }
     form {
