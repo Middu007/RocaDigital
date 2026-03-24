@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Roca Digital Services – Crescita e Sviluppo per Imprese</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  
+  <!-- Font e Icone -->
+  //fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,6 +25,7 @@
       font-family: 'Inter', sans-serif;
       color: var(--dark);
       background: var(--white);
+      scroll-behavior: smooth;
     }
 
     /* NAV */
@@ -36,7 +41,7 @@
       z-index: 100;
     }
     nav img { height: 52px; }
-    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
     nav ul a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 15px; transition: color .2s; }
     nav ul a:hover { color: var(--orange); }
     .nav-cta {
@@ -47,7 +52,7 @@
       font-weight: 700 !important;
       transition: background .2s !important;
     }
-    .nav-cta:hover { background: var(--orange-light) !important; color: var(--white) !important; }
+    .nav-cta:hover { background: var(--orange-light) !important; }
 
     /* HERO */
     .hero {
@@ -78,7 +83,6 @@
       padding: 14px 32px;
       border-radius: 6px;
       font-weight: 700;
-      font-size: 1rem;
       text-decoration: none;
       transition: background .2s;
     }
@@ -89,7 +93,6 @@
       padding: 14px 32px;
       border-radius: 6px;
       font-weight: 700;
-      font-size: 1rem;
       text-decoration: none;
       transition: all .2s;
     }
@@ -143,7 +146,7 @@
       transition: transform .2s, box-shadow .2s;
     }
     .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(217,79,30,.15); }
-    .card-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .card-icon { font-size: 2.2rem; margin-bottom: 16px; color: var(--orange); }
     .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
     .card p { font-size: 0.92rem; color: var(--gray); line-height: 1.6; }
 
@@ -172,62 +175,34 @@
       background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
       color: var(--white);
     }
-<!-- SEZIONE FORM CONTATTO -->
-<section class="form-section" id="contatto">
-  <h2>Parliamo del tuo progetto</h2>
-  <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore per una consulenza gratuita e senza impegno.</p>
-  
-  <!-- MODIFICA QUI: https://formspree.io/f/mkoqdaal -->
-  <form action="https://formspree.io/f/IL_TUO_ID_QUI" method="POST">
+    .form-section h2 { color: var(--white); margin-bottom: 10px; }
+    .form-section .section-sub { color: #bbb; margin-bottom: 40px; }
     
-    <input type="text" name="nome" placeholder="Nome" required>
-    <input type="text" name="cognome" placeholder="Cognome" required>
-    <input type="tel" name="telefono" placeholder="Telefono" required>
-    <input type="text" name="azienda" placeholder="Azienda (opzionale)">
-    
-    <!-- L'email deve avere name="email" per essere riconosciuta da Formspree come mittente -->
-    <input type="email" name="email" placeholder="La tua Email" required class="full">
-    
-    <textarea name="messaggio" placeholder="Raccontaci il tuo progetto: hai un negozio o un sito web?" class="full" required></textarea>
-    
-    abel class="privacy-label full">
-      <input type="checkbox" name="_optin" required> 
-      Ho letto e accetto la <a href="#" style="color: var(--orange-light)">Privacy Policy</a> ai sensi del GDPR (Reg. UE 2016/679) e acconsento al trattamento dei miei dati personali.
-    </label>
-    
-    <!-- Pagina di ringraziamento personalizzata (opzionale) -->
-    <input type="hidden" name="_subject" value="Nuovo contatto da Roca Digital Services!">
-    
-    <button type="submit" class="btn-submit">Invia richiesta</button>
-  </form>
-</section>
-    .form-section h2 { color: var(--white); }
-    .form-section .section-sub { color: #bbb; }
-    form {
+    .contact-form {
       max-width: 640px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-    form input, form textarea, form select {
+    .contact-form input, .contact-form textarea {
       padding: 14px 16px;
       border: 1px solid #444;
       background: #2a2a2a;
       color: var(--white);
       border-radius: 8px;
       font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       outline: none;
-      transition: border .2s;
       width: 100%;
     }
-    form input::placeholder, form textarea::placeholder { color: #888; }
-    form input:focus, form textarea:focus { border-color: var(--orange); }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--orange); }
     .full { grid-column: 1 / -1; }
-    form textarea { resize: vertical; min-height: 110px; }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    
     .privacy-label { font-size: 0.8rem; color: #aaa; display: flex; gap: 10px; align-items: flex-start; }
-    .privacy-label input[type=checkbox] { margin-top: 3px; accent-color: var(--orange); }
+    .privacy-label input { width: auto; margin-top: 3px; accent-color: var(--orange); }
+    
     .btn-submit {
       grid-column: 1 / -1;
       background: var(--orange);
@@ -239,7 +214,6 @@
       font-weight: 700;
       cursor: pointer;
       transition: background .2s;
-      font-family: 'Inter', sans-serif;
     }
     .btn-submit:hover { background: var(--orange-light); }
 
@@ -260,268 +234,136 @@
       text-decoration: none;
       box-shadow: 0 4px 16px rgba(37,211,102,.4);
       z-index: 999;
-      transition: transform .2s, box-shadow .2s;
     }
-    .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(37,211,102,.5); }
-    .whatsapp-float svg { width: 22px; height: 22px; fill: white; }
 
     /* FOOTER */
-    footer {
-      background: #111;
-      color: #ccc;
-      padding: 52px 60px 28px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 40px;
-    }
+    footer { background: #111; color: #ccc; padding: 52px 60px 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
     footer img { height: 44px; margin-bottom: 16px; }
-    footer p { font-size: 0.88rem; line-height: 1.7; color: #999; }
-    .footer-col h4 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--orange);
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
+    .footer-col h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; font-weight: 700; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col ul a { color: #bbb; text-decoration: none; font-size: 0.9rem; transition: color .2s; }
     .footer-col ul a:hover { color: var(--orange); }
-
-    /* CONTATTI FOOTER - font grande */
-    .contact-block { margin-top: 4px; }
-    .contact-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--orange);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .contact-value {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 20px;
-      transition: color .2s;
-      line-height: 1.3;
-    }
-    .contact-value:hover { color: var(--orange-light); }
-
-    .footer-bottom {
-      border-top: 1px solid #2a2a2a;
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-bottom span { font-size: 0.82rem; color: #666; }
-    .footer-bottom a { color: #666; text-decoration: none; font-size: 0.82rem; }
-    .footer-bottom a:hover { color: var(--orange); }
+    .contact-label { font-size: 0.72rem; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-bottom: 4px; }
+    .contact-value { font-size: 1.25rem; font-weight: 700; color: var(--white); text-decoration: none; display: block; margin-bottom: 20px; line-height: 1.3; }
 
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       nav ul { display: none; }
       section { padding: 60px 24px; }
       .perche-grid { grid-template-columns: 1fr; }
-      form { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .stats { gap: 32px; padding: 40px 20px; }
-      .whatsapp-float span { display: none; }
-      .whatsapp-float { padding: 14px; }
+      .contact-form { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/393501523543" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-  <span>Scrivici su WhatsApp</span>
-</a>
+  <!-- NAV -->
+  <nav>
+    <img src="roca-logo.png" alt="Roca Logo" />
+    <ul>
+      ><a href="#servizi">Servizi</a></li>
+      ><a href="#perche">Chi siamo</a></li>
+      ><a href="#contatto">Contatti</a></li>
+      ><a href="#contatto" class="nav-cta">Richiedi info</a></li>
+    </ul>
+  </nav>
 
-<!-- NAV -->
-<nav>
-  <img src="roca-logo.png" alt="Roca Digital Services Logo" />
-  <ul>
-    <li><a href="#servizi">Servizi</a></li>
-    <li><a href="#perche">Chi siamo</a></li>
-    <li><a href="#contatto">Contatti</a></li>
-    <li><a href="#contatto" class="nav-cta">Richiedi info</a></li>
-  </ul>
-</nav>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Crescita e Sviluppo<br/><span>per la tua Impresa</span></h1>
+    <p>Roca Digital Services è il tuo hub multiservizi digitale. Accompagniamo imprenditori verso risultati concreti con strategie su misura.</p>
+    <div class="hero-btns">
+      <a href="#contatto" class="btn-primary">Prenota una consulenza</a>
+      <a href="#servizi" class="btn-outline">Scopri i servizi</a>
+    </div>
+  </section>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Crescita e Sviluppo<br/><span>per la tua Impresa</span></h1>
-  <p>Roca Digital Services è il tuo hub multiservizi digitale. Accompagniamo imprenditori e aziende verso risultati concreti, con competenze integrate e strategie su misura.</p>
-  <div class="hero-btns">
-    <a href="#contatto" class="btn-primary">Prenota una consulenza</a>
-    <a href="#servizi" class="btn-outline">Scopri i servizi</a>
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item"><h2>+50</h2><p>Clienti soddisfatti</p></div>
+    <div class="stat-item"><h2>360°</h2><p>Approccio multiservizi</p></div>
+    <div class="stat-item"><h2>5+</h2><p>Anni di esperienza</p></div>
+    <div class="stat-item"><h2>100%</h2><p>Focus sul risultato</p></div>
   </div>
-</section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-item">
-    <h2>+50</h2>
-    <p>Clienti soddisfatti</p>
-  </div>
-  <div class="stat-item">
-    <h2>360°</h2>
-    <p>Approccio multiservizi</p>
-  </div>
-  <div class="stat-item">
-    <h2>5+</h2>
-    <p>Anni di esperienza</p>
-  </div>
-  <div class="stat-item">
-    <h2>100%</h2>
-    <p>Focus sul risultato</p>
-  </div>
-</div>
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi">
+    <h2>I nostri Servizi</h2>
+    <p class="section-sub">Un unico punto di riferimento per tutte le esigenze digitali della tua azienda.</p>
+    <div class="cards">
+      <div class="card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Siti Web & Landing</h3><p>Realizziamo siti veloci e ottimizzati per convertire visitatori in clienti.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-bullseye"></i></div><h3>Marketing Digitale</h3><p>Strategie personalizzate SEO, social media e advertising.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-robot"></i></div><h3>Automazione</h3><p>Automatizziamo i flussi aziendali per risparmiare tempo prezioso.</p></div>
+    </div>
+  </section>
 
-<!-- SERVIZI -->
-<section class="servizi" id="servizi">
-  <h2>I nostri Servizi</h2>
-  <p class="section-sub">Un unico punto di riferimento per tutte le esigenze digitali della tua azienda. Soluzioni integrate, efficaci e scalabili.</p>
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon">🌐</div>
-      <h3>Siti Web & Landing Page</h3>
-      <p>Realizziamo siti professionali, veloci e ottimizzati per convertire visitatori in clienti reali.</p>
+  <!-- PERCHÉ NOI -->
+  <section class="perche" id="perche">
+    <h2>Perché scegliere Roca</h2>
+    <p class="section-sub">Siamo il partner strategico che lavora al fianco dell'imprenditore.</p>
+    <div class="perche-grid">
+      <div class="perche-item"><div class="perche-dot">1</div><div><h4>Un solo interlocutore</h4><p>Un punto di riferimento unico per tutti i servizi digitali.</p></div></div>
+      <div class="perche-item"><div class="perche-dot">2</div><div><h4>Soluzioni su misura</h4><p>Ogni impresa è diversa. Progettiamo strategie personalizzate.</p></div></div>
     </div>
-    <div class="card">
-      <div class="card-icon">📈</div>
-      <h3>Marketing Digitale</h3>
-      <p>Strategie di marketing online personalizzate: SEO, campagne e gestione dei canali social.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">⚙️</div>
-      <h3>Automazione Processi</h3>
-      <p>Automatizziamo i flussi aziendali per risparmiare tempo e ridurre gli errori operativi.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🏢</div>
-      <h3>Hub Multiservizi</h3>
-      <p>Dalla comunicazione alla gestione digitale: tutto ciò di cui la tua impresa ha bisogno, in un unico partner.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🎯</div>
-      <h3>Consulenza Strategica</h3>
-      <p>Analisi del business e roadmap di crescita per guidare le decisioni con dati e chiarezza.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🔒</div>
-      <h3>Gestione & Sicurezza</h3>
-      <p>Manutenzione, aggiornamenti e protezione dei tuoi asset digitali in modo continuo e affidabile.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- PERCHÉ NOI -->
-<section class="perche" id="perche">
-  <h2>Perché scegliere Roca</h2>
-  <p class="section-sub">Non siamo solo fornitori di servizi. Siamo il partner strategico che lavora al fianco dell'imprenditore per far crescere il business.</p>
-  <div class="perche-grid">
-    <div class="perche-item">
-      <div class="perche-dot">1</div>
+  <!-- FORM CONTATTO -->
+  <section class="form-section" id="contatto">
+    <h2>Parliamo del tuo progetto</h2>
+    <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore.</p>
+    
+    <form class="contact-form" action="https://formspree.io/f/mkoqdaal" method="POST">
+      <input type="text" name="nome" placeholder="Nome *" required>
+      <input type="text" name="cognome" placeholder="Cognome *" required>
+      <input type="tel" name="telefono" placeholder="Telefono *" required>
+      <input type="text" name="azienda" placeholder="Azienda">
+      <input type="email" name="email" placeholder="La tua Email *" required class="full">
+      <textarea name="messaggio" placeholder="Raccontaci il tuo progetto *" class="full" required></textarea>
+      
+      abel class="privacy-label full">
+        <input type="checkbox" name="privacy_accepted" required> 
+        Ho letto e accetto la Privacy Policy ai sensi del GDPR.
+      </label>
+      
+      <button type="submit" class="btn-submit">Invia richiesta →</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
       <div>
-        <h4>Un solo interlocutore</h4>
-        <p>Niente dispersione tra più agenzie. Con Roca hai un punto di riferimento unico per tutti i servizi digitali.</p>
+        <img src="roca-logo.png" alt="Roca Logo" />
+        <p>Hub multiservizi digitale per imprenditori e aziende che vogliono crescere.</p>
       </div>
-    </div>
-    <div class="perche-item">
-      <div class="perche-dot">2</div>
-      <div>
-        <h4>Soluzioni su misura</h4>
-        <p>Ogni impresa è diversa. Progettiamo strategie personalizzate, non pacchetti standardizzati.</p>
-      </div>
-    </div>
-    <div class="perche-item">
-      <div class="perche-dot">3</div>
-      <div>
-        <h4>Risultati misurabili</h4>
-        <p>Tutto ciò che facciamo è tracciato e ottimizzato per produrre impatto concreto sul tuo fatturato.</p>
-      </div>
-    </div>
-    <div class="perche-item">
-      <div class="perche-dot">4</div>
-      <div>
-        <h4>Team agile e reattivo</h4>
-        <p>Rispondiamo rapidamente alle tue esigenze. Flessibilità e velocità sono i nostri punti di forza.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORM CONTATTO -->
-<section class="form-section" id="contatto">
-  <h2>Parliamo del tuo progetto</h2>
-  <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore per una consulenza gratuita e senza impegno.</p>
-  <form action="#" method="POST">
-    <input type="text" name="nome" placeholder="Nome *" required />
-    <input type="text" name="cognome" placeholder="Cognome *" required />
-    <input type="tel" name="telefono" placeholder="Telefono *" required />
-    <input type="text" name="azienda" placeholder="Azienda" />
-    <input type="email" name="email" placeholder="Email *" required class="full" />
-    <textarea name="messaggio" placeholder="Raccontaci il tuo progetto *" class="full" required></textarea>
-    <label class="privacy-label full">
-      <input type="checkbox" required />
-      Ho letto e accetto la <a href="#" style="color: var(--orange-light);">Privacy Policy</a> ai sensi del GDPR (Reg. UE 2016/679) e acconsento al trattamento dei miei dati personali.
-    </label>
-    <button type="submit" class="btn-submit">Invia richiesta →</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <img src="roca-logo.png" alt="Roca Digital Services" />
-      <p>Hub multiservizi digitale per imprenditori e aziende che vogliono crescere. Un unico partner, competenze integrate, risultati concreti.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Contatti</h4>
-      <div class="contact-block">
+      <div class="footer-col">
+        <h4>Contatti</h4>
         <div class="contact-label">Email</div>
         <a class="contact-value" href="mailto:rocadigitalservices@gmail.com">rocadigitalservices@gmail.com</a>
         <div class="contact-label">Telefono</div>
         <a class="contact-value" href="tel:+393501523543">+39 350 152 3543</a>
-        <div class="contact-label">Sede</div>
-        <span class="contact-value" style="cursor:default; font-size:1.1rem;">Benevento (BN), Italia</span>
+      </div>
+      <div class="footer-col">
+        <h4>Azienda</h4>
+        <ul>
+          ><a href="#perche">Chi siamo</a></li>
+          ><a href="#servizi">Servizi</a></li>
+          ><a href="#contatto">Contatti</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Azienda</h4>
-      <ul>
-        <li><a href="#perche">Chi siamo</a></li>
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#contatto">Contatti</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Cookie Policy</a></li>
-      </ul>
+    <div style="border-top: 1px solid #2a2a2a; padding-top: 20px; font-size: 0.8rem; color: #666; text-align: center;">
+      © 2026 Roca Digital Services – Benevento, Italia
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Roca Digital Services – Benevento, Italia</span>
-    <div style="display:flex; gap: 20px;">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="whatsapp-float" href="https://wa.me/393501523543" target="_blank">
+    <i class="fab fa-whatsapp"></i> Scrivici su WhatsApp
+  </a>
 
 </body>
 </html>
