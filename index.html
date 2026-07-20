@@ -2,16 +2,69 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Roca Digital Services – Crescita e Sviluppo per Imprese</title>
+
   <link rel="icon" type="image/png" href="roca-logo.png" />
-  
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {
+      if (f.fbq) return;
+
+      n = f.fbq = function() {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+
+      if (!f._fbq) f._fbq = n;
+
+      n.push = n;
+      n.loaded = true;
+      n.version = '2.0';
+      n.queue = [];
+
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '1296637822548944');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
   <!-- Font e Icone -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --orange: #D94F1E;
@@ -22,14 +75,18 @@
       --white: #FFFFFF;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       color: var(--dark);
       background: var(--white);
-      scroll-behavior: smooth;
     }
 
     /* NAV */
+
     nav {
       display: flex;
       align-items: center;
@@ -41,27 +98,56 @@
       top: 0;
       z-index: 100;
     }
-    nav img { height: 52px; }
-    nav ul { list-style: none; display: flex; gap: 32px; align-items: center; }
-    nav ul a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 15px; transition: color .2s; }
-    nav ul a:hover { color: var(--orange); }
+
+    nav img {
+      height: 52px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--orange);
+    }
+
     .nav-cta {
       background: var(--orange);
       color: var(--white) !important;
       padding: 10px 24px;
       border-radius: 6px;
       font-weight: 700 !important;
-      transition: background .2s !important;
+      transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--orange-light) !important; }
+
+    .nav-cta:hover {
+      background: var(--orange-light) !important;
+    }
 
     /* HERO */
+
     .hero {
-      background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
+      background: linear-gradient(
+        135deg,
+        #1A1A1A 0%,
+        #2D2D2D 100%
+      );
       color: var(--white);
       text-align: center;
       padding: 100px 40px 90px;
     }
+
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 900;
@@ -69,7 +155,11 @@
       max-width: 800px;
       margin: 0 auto 20px;
     }
-    .hero h1 span { color: var(--orange-light); }
+
+    .hero h1 span {
+      color: var(--orange-light);
+    }
+
     .hero p {
       font-size: 1.15rem;
       color: #ccc;
@@ -77,7 +167,14 @@
       margin: 0 auto 36px;
       line-height: 1.7;
     }
-    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .btn-primary {
       background: var(--orange);
       color: var(--white);
@@ -85,9 +182,13 @@
       border-radius: 6px;
       font-weight: 700;
       text-decoration: none;
-      transition: background .2s;
+      transition: background 0.2s;
     }
-    .btn-primary:hover { background: var(--orange-light); }
+
+    .btn-primary:hover {
+      background: var(--orange-light);
+    }
+
     .btn-outline {
       border: 2px solid var(--white);
       color: var(--white);
@@ -95,32 +196,52 @@
       border-radius: 6px;
       font-weight: 700;
       text-decoration: none;
-      transition: all .2s;
+      transition: all 0.2s;
     }
-    .btn-outline:hover { background: var(--white); color: var(--dark); }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
 
     /* STATS */
+
     .stats {
       display: flex;
       justify-content: center;
       gap: 60px;
       flex-wrap: wrap;
       background: var(--orange);
-      padding: 40px 40px;
+      padding: 40px;
       color: var(--white);
       text-align: center;
     }
-    .stat-item h2 { font-size: 2.6rem; font-weight: 900; }
-    .stat-item p { font-size: 0.95rem; font-weight: 600; opacity: .9; margin-top: 4px; }
+
+    .stat-item h2 {
+      font-size: 2.6rem;
+      font-weight: 900;
+    }
+
+    .stat-item p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
 
     /* SEZIONI */
-    section { padding: 80px 60px; }
+
+    section {
+      padding: 80px 60px;
+    }
+
     section h2 {
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 900;
       text-align: center;
       margin-bottom: 12px;
     }
+
     .section-sub {
       text-align: center;
       color: var(--gray);
@@ -131,28 +252,61 @@
     }
 
     /* SERVIZI */
-    .servizi { background: var(--light-bg); }
+
+    .servizi {
+      background: var(--light-bg);
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+      );
       gap: 28px;
       max-width: 1100px;
       margin: 0 auto;
     }
+
     .card {
       background: var(--white);
       border-radius: 12px;
       padding: 32px 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
-      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(217,79,30,.15); }
-    .card-icon { font-size: 2.2rem; margin-bottom: 16px; color: var(--orange); }
-    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
-    .card p { font-size: 0.92rem; color: var(--gray); line-height: 1.6; }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(217, 79, 30, 0.15);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: var(--orange);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
 
     /* PERCHÉ NOI */
-    .perche { background: var(--white); }
+
+    .perche {
+      background: var(--white);
+    }
+
     .perche-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -160,25 +314,59 @@
       max-width: 900px;
       margin: 0 auto;
     }
-    .perche-item { display: flex; gap: 16px; align-items: flex-start; }
+
+    .perche-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
     .perche-dot {
-      min-width: 44px; height: 44px;
+      min-width: 44px;
+      height: 44px;
       background: var(--orange);
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 1.2rem; font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 900;
     }
-    .perche-item h4 { font-weight: 700; margin-bottom: 6px; font-size: 1rem; }
-    .perche-item p { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+
+    .perche-item h4 {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .perche-item p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
 
     /* FORM */
+
     .form-section {
-      background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
+      background: linear-gradient(
+        135deg,
+        #1A1A1A 0%,
+        #2D2D2D 100%
+      );
       color: var(--white);
     }
-    .form-section h2 { color: var(--white); margin-bottom: 10px; }
-    .form-section .section-sub { color: #bbb; margin-bottom: 40px; }
-    
+
+    .form-section h2 {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .form-section .section-sub {
+      color: #bbb;
+      margin-bottom: 40px;
+    }
+
     .contact-form {
       max-width: 640px;
       margin: 0 auto;
@@ -186,10 +374,12 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-    .contact-form input, .contact-form textarea {
+
+    .contact-form input,
+    .contact-form textarea {
       padding: 14px 16px;
       border: 1px solid #444;
-      background: #2a2a2a;
+      background: #2A2A2A;
       color: var(--white);
       border-radius: 8px;
       font-size: 0.95rem;
@@ -197,13 +387,35 @@
       outline: none;
       width: 100%;
     }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--orange); }
-    .full { grid-column: 1 / -1; }
-    .contact-form textarea { resize: vertical; min-height: 110px; }
-    
-    .privacy-label { font-size: 0.8rem; color: #aaa; display: flex; gap: 10px; align-items: flex-start; }
-    .privacy-label input { width: auto; margin-top: 3px; accent-color: var(--orange); }
-    
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .privacy-label {
+      font-size: 0.8rem;
+      color: #aaa;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .privacy-label input {
+      width: auto;
+      margin-top: 3px;
+      accent-color: var(--orange);
+    }
+
     .btn-submit {
       grid-column: 1 / -1;
       background: var(--orange);
@@ -214,11 +426,15 @@
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
-      transition: background .2s;
+      transition: background 0.2s;
     }
-    .btn-submit:hover { background: var(--orange-light); }
+
+    .btn-submit:hover {
+      background: var(--orange-light);
+    }
 
     /* WHATSAPP FLOAT */
+
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -233,139 +449,489 @@
       font-weight: 700;
       font-size: 0.92rem;
       text-decoration: none;
-      box-shadow: 0 4px 16px rgba(37,211,102,.4);
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
       z-index: 999;
     }
 
     /* FOOTER */
-    footer { background: #111; color: #ccc; padding: 52px 60px 28px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-    footer img { height: 44px; margin-bottom: 16px; }
-    .footer-col h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; font-weight: 700; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { color: #bbb; text-decoration: none; font-size: 0.9rem; transition: color .2s; }
-    .footer-col ul a:hover { color: var(--orange); }
-    .contact-label { font-size: 0.72rem; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-bottom: 4px; }
-    .contact-value { font-size: 1.25rem; font-weight: 700; color: var(--white); text-decoration: none; display: block; margin-bottom: 20px; line-height: 1.3; }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 52px 60px 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    footer img {
+      height: 44px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--orange);
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
 
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      nav ul { display: none; }
-      section { padding: 60px 24px; }
-      .perche-grid { grid-template-columns: 1fr; }
-      .contact-form { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      nav {
+        padding: 16px 20px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      section {
+        padding: 60px 24px;
+      }
+
+      .perche-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+        padding: 13px 18px;
+      }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Meta Pixel fallback per browser senza JavaScript -->
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1296637822548944&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+
   <!-- NAV -->
+
   <nav>
     <img src="roca-logo.png" alt="Roca Logo" />
+
     <ul>
-      <li><a href="#servizi">Servizi</a></li>
-      <li><a href="#perche">Chi siamo</a></li>
-      <li><a href="#contatto">Contatti</a></li>
-      <li><a href="#contatto" class="nav-cta">Richiedi info</a></li>
+      <li>
+        <a href="#servizi">Servizi</a>
+      </li>
+
+      <li>
+        <a href="#perche">Chi siamo</a>
+      </li>
+
+      <li>
+        <a href="#contatto">Contatti</a>
+      </li>
+
+      <li>
+        <a href="#contatto" class="nav-cta">
+          Richiedi info
+        </a>
+      </li>
     </ul>
   </nav>
 
   <!-- HERO -->
+
   <section class="hero">
-    <h1>Crescita e Sviluppo<br/><span>per la tua Impresa</span></h1>
-    <p>Roca Digital Services è il tuo hub multiservizi digitale. Accompagniamo imprenditori verso risultati concreti con strategie su misura.</p>
+    <h1>
+      Crescita e Sviluppo
+      <br />
+      <span>per la tua Impresa</span>
+    </h1>
+
+    <p>
+      Roca Digital Services è il tuo hub multiservizi digitale.
+      Accompagniamo imprenditori verso risultati concreti con
+      strategie su misura.
+    </p>
+
     <div class="hero-btns">
-      <a href="#contatto" class="btn-primary">Prenota una consulenza</a>
-      <a href="#servizi" class="btn-outline">Scopri i servizi</a>
+      <a href="#contatto" class="btn-primary">
+        Prenota una consulenza
+      </a>
+
+      <a href="#servizi" class="btn-outline">
+        Scopri i servizi
+      </a>
     </div>
   </section>
 
   <!-- STATS -->
+
   <div class="stats">
-    <div class="stat-item"><h2>+50</h2><p>Clienti soddisfatti</p></div>
-    <div class="stat-item"><h2>360°</h2><p>Approccio multiservizi</p></div>
-    <div class="stat-item"><h2>5+</h2><p>Anni di esperienza</p></div>
-    <div class="stat-item"><h2>100%</h2><p>Focus sul risultato</p></div>
+    <div class="stat-item">
+      <h2>+50</h2>
+      <p>Clienti soddisfatti</p>
+    </div>
+
+    <div class="stat-item">
+      <h2>360°</h2>
+      <p>Approccio multiservizi</p>
+    </div>
+
+    <div class="stat-item">
+      <h2>5+</h2>
+      <p>Anni di esperienza</p>
+    </div>
+
+    <div class="stat-item">
+      <h2>100%</h2>
+      <p>Focus sul risultato</p>
+    </div>
   </div>
 
   <!-- SERVIZI -->
+
   <section class="servizi" id="servizi">
     <h2>I nostri Servizi</h2>
-    <p class="section-sub">Un unico punto di riferimento per tutte le esigenze digitali della tua azienda.</p>
+
+    <p class="section-sub">
+      Un unico punto di riferimento per tutte le esigenze digitali
+      della tua azienda.
+    </p>
+
     <div class="cards">
-      <div class="card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Siti Web & Landing</h3><p>Realizziamo siti veloci e ottimizzati per convertire visitatori in clienti.</p></div>
-      <div class="card"><div class="card-icon"><i class="fas fa-bullseye"></i></div><h3>Marketing Digitale</h3><p>Strategie personalizzate SEO, social media e advertising.</p></div>
-      <div class="card"><div class="card-icon"><i class="fas fa-robot"></i></div><h3>Automazione</h3><p>Automatizziamo i flussi aziendali per risparmiare tempo prezioso.</p></div>
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+
+        <h3>Siti Web &amp; Landing</h3>
+
+        <p>
+          Realizziamo siti veloci e ottimizzati per convertire
+          visitatori in clienti.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+
+        <h3>Marketing Digitale</h3>
+
+        <p>
+          Strategie personalizzate SEO, social media e advertising.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+
+        <h3>Automazione</h3>
+
+        <p>
+          Automatizziamo i flussi aziendali per risparmiare tempo
+          prezioso.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- PERCHÉ NOI -->
+
   <section class="perche" id="perche">
     <h2>Perché scegliere Roca</h2>
-    <p class="section-sub">Siamo il partner strategico che lavora al fianco dell'imprenditore.</p>
+
+    <p class="section-sub">
+      Siamo il partner strategico che lavora al fianco
+      dell'imprenditore.
+    </p>
+
     <div class="perche-grid">
-      <div class="perche-item"><div class="perche-dot">1</div><div><h4>Un solo interlocutore</h4><p>Un punto di riferimento unico per tutti i servizi digitali.</p></div></div>
-      <div class="perche-item"><div class="perche-dot">2</div><div><h4>Soluzioni su misura</h4><p>Ogni impresa è diversa. Progettiamo strategie personalizzate.</p></div></div>
+      <div class="perche-item">
+        <div class="perche-dot">1</div>
+
+        <div>
+          <h4>Un solo interlocutore</h4>
+
+          <p>
+            Un punto di riferimento unico per tutti i servizi
+            digitali.
+          </p>
+        </div>
+      </div>
+
+      <div class="perche-item">
+        <div class="perche-dot">2</div>
+
+        <div>
+          <h4>Soluzioni su misura</h4>
+
+          <p>
+            Ogni impresa è diversa. Progettiamo strategie
+            personalizzate.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FORM CONTATTO -->
+
   <section class="form-section" id="contatto">
     <h2>Parliamo del tuo progetto</h2>
-    <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore.</p>
-    
-    <form class="contact-form" action="https://formspree.io/f/mkoqdaal" method="POST">
-      <input type="text" name="nome" placeholder="Nome *" required>
-      <input type="text" name="cognome" placeholder="Cognome *" required>
-      <input type="tel" name="telefono" placeholder="Telefono *" required>
-      <input type="text" name="azienda" placeholder="Azienda">
-      <input type="email" name="email" placeholder="La tua Email *" required class="full">
-      <textarea name="messaggio" placeholder="Raccontaci il tuo progetto *" class="full" required></textarea>
-      
+
+    <p class="section-sub">
+      Compila il modulo e ti ricontattiamo entro 24 ore.
+    </p>
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/mkoqdaal"
+      method="POST"
+    >
+      <input
+        type="text"
+        name="nome"
+        placeholder="Nome *"
+        required
+      />
+
+      <input
+        type="text"
+        name="cognome"
+        placeholder="Cognome *"
+        required
+      />
+
+      <input
+        type="tel"
+        name="telefono"
+        placeholder="Telefono *"
+        required
+      />
+
+      <input
+        type="text"
+        name="azienda"
+        placeholder="Azienda"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="La tua Email *"
+        required
+        class="full"
+      />
+
+      <textarea
+        name="messaggio"
+        placeholder="Raccontaci il tuo progetto *"
+        class="full"
+        required
+      ></textarea>
+
       <label class="privacy-label full">
-        <input type="checkbox" name="privacy_accepted" required> 
-        Ho letto e accetto la Privacy Policy ai sensi del GDPR.
+        <input
+          type="checkbox"
+          name="privacy_accepted"
+          required
+        />
+
+        <span>
+          Ho letto e accetto la Privacy Policy ai sensi del GDPR.
+        </span>
       </label>
-      
-      <button type="submit" class="btn-submit">Invia richiesta →</button>
+
+      <button type="submit" class="btn-submit">
+        Invia richiesta →
+      </button>
     </form>
   </section>
 
   <!-- FOOTER -->
-<footer>
-<div class="footer-grid">
-<div>
-<img src="roca-logo.png" alt="Roca Logo" />
-<p>Hub multiservizi digitale per imprenditori e aziende che vogliono crescere.</p>
-</div>
-<div class="footer-col">
-<h4>Contatti</h4>
-<div class="contact-label">Email</div>
-<a class="contact-value" href="mailto:rocadigitalservices@gmail.com">rocadigitalservices@gmail.com</a>
-<div class="contact-label">Telefono</div>
-<a class="contact-value" href="tel:+393501523543">+39 350 152 3543</a>
-</div>
-<div class="footer-col">
-<h4>Azienda</h4>
-<ul>
-><a href="#perche">Chi siamo</a></li>
-><a href="#servizi">Servizi</a></li>
-><a href="#contatto">Contatti</a></li>
-</ul>
-</div>
-</div>
-<div style="border-top: 1px solid #2a2a2a; padding-top: 20px; font-size: 0.8rem; color: #666; text-align: center;">
-© 2026 Roca Digital Services – Benevento, Italia
-</div>
-</footer>
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/393501523543" target="_blank">
-<i class="fab fa-whatsapp"></i> Scrivici su WhatsApp
-</a>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="roca-logo.png" alt="Roca Logo" />
+
+        <p>
+          Hub multiservizi digitale per imprenditori e aziende
+          che vogliono crescere.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contatti</h4>
+
+        <div class="contact-label">Email</div>
+
+        <a
+          class="contact-value"
+          href="mailto:rocadigitalservices@gmail.com"
+        >
+          rocadigitalservices@gmail.com
+        </a>
+
+        <div class="contact-label">Telefono</div>
+
+        <a
+          class="contact-value"
+          href="tel:+393501523543"
+        >
+          +39 350 152 3543
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Azienda</h4>
+
+        <ul>
+          <li>
+            <a href="#perche">Chi siamo</a>
+          </li>
+
+          <li>
+            <a href="#servizi">Servizi</a>
+          </li>
+
+          <li>
+            <a href="#contatto">Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      style="
+        border-top: 1px solid #2a2a2a;
+        padding-top: 20px;
+        font-size: 0.8rem;
+        color: #666;
+        text-align: center;
+      "
+    >
+      © 2026 Roca Digital Services – Benevento, Italia
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/393501523543"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i class="fab fa-whatsapp"></i>
+    Scrivici su WhatsApp
+  </a>
+
+  <!-- Eventi di conversione Meta Pixel -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactForm =
+        document.querySelector('.contact-form');
+
+      const whatsappButton =
+        document.querySelector('.whatsapp-float');
+
+      /*
+       * Registra un evento Lead quando il modulo
+       * viene compilato correttamente e inviato.
+       */
+      if (contactForm) {
+        contactForm.addEventListener('submit', function () {
+          if (
+            contactForm.checkValidity() &&
+            typeof fbq === 'function'
+          ) {
+            fbq('track', 'Lead', {
+              content_name:
+                'Modulo contatti Roca Digital Services',
+              content_category:
+                'Richiesta consulenza'
+            });
+          }
+        });
+      }
+
+      /*
+       * Registra un evento Contact quando
+       * l'utente apre WhatsApp.
+       */
+      if (whatsappButton) {
+        whatsappButton.addEventListener('click', function () {
+          if (typeof fbq === 'function') {
+            fbq('track', 'Contact', {
+              content_name:
+                'Contatto WhatsApp Roca Digital Services',
+              contact_method:
+                'WhatsApp'
+            });
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
-
